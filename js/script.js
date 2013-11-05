@@ -16,7 +16,7 @@ map.addLayer(cloudmade);
 // First we'll initialize Tabletop with our spreadsheet
 var jqueryNoConflict = jQuery;
 jqueryNoConflict(document).ready(function(){
-	initializeTabletopObject('0As3JvOeYDO50dF9NWWRiaTdqNmdKQ1lCY3dpdDhZU3c');
+	initializeTabletopObject('0Ahugi99OESIJdFdpRUpWSFZKMHlBa004MGFDYkdyUlE');
 });
 
 // Pull data from Google spreadsheet
@@ -41,11 +41,11 @@ function startUpLeafet(tabletopData) {
 		// Our table columns
 		// Change 'brewery', 'address', etc.
 		// To match table column names in your table
-		var dataOne = tabletopData[num].brewery;
-		var dataTwo = tabletopData[num].address;
-		var dataThree = tabletopData[num].city;
-		var dataFour= tabletopData[num].phone;
-		var dataFive = tabletopData[num].website;
+		var dataOne = tabletopData[num].nom;
+		var dataTwo = tabletopData[num].date;
+		var dataThree = tabletopData[num].ville;
+		//var dataFour= tabletopData[num].phone;
+		//var dataFive = tabletopData[num].website;
 
 		// Pull in our lat, long information
 		var dataLat = tabletopData[num].latitude;
@@ -62,10 +62,10 @@ function startUpLeafet(tabletopData) {
     	var popup = "<div class=popup_box" + "id=" + num + ">";
     	popup += "<div class='popup_box_header'><strong>" + dataOne + "</strong></div>";
     	popup += "<hr />";
-    	popup += "<strong>Address:</strong> " + dataTwo + "<br />";
-    	popup += "<strong>City:</strong> " + dataThree + "<br />";
-    	popup += "<strong>Phone:</strong> " + dataFour + "<br />";
-    	popup += "<strong>Website:</strong> " + dataFive + "<br />";
+    	popup += "<strong>Né le :</strong> " + dataTwo + "<br />";
+    	popup += "<strong>À :</strong> " + dataThree + "<br />";
+    	//popup += "<strong>Phone:</strong> " + dataFour + "<br />";
+    	//popup += "<strong>Website:</strong> " + dataFive + "<br />";
     	popup += "</div>";
     	// Add to our marker
 		layer.bindPopup(popup);
